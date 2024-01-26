@@ -14,6 +14,7 @@ public class CanvasController : MonoBehaviour
 
         canvas.transform.Find("MainMenu").GetComponent<CanvasGroup>().alpha = 1;
         canvas.transform.Find("GameOver").GetComponent<CanvasGroup>().alpha = 0;
+        canvas.transform.Find("DuringGame").GetComponent<CanvasGroup>().alpha = 0;
     }
 
     void FixedUpdate()
