@@ -2,22 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CanvasController : MonoBehaviour
 {
     Button[] Buttons;
     public Canvas canvas;
-    public GameObject gameObject;
 
     void Awake()
     {
         canvas.gameObject.SetActive(true);
 
         canvas.transform.Find("MainMenu").GetComponent<CanvasGroup>().alpha = 1;
-        canvas.transform.Find("GameOver").GetComponent<CanvasGroup>().alpha = 0;
-        canvas.transform.Find("DuringGame").GetComponent<CanvasGroup>().alpha = 0;
-
-        Time.timeScale = 0;
     }
 
     void FixedUpdate()
@@ -34,7 +30,8 @@ public class CanvasController : MonoBehaviour
         switch (item.name)
         {
             case "Play":
-                canvas.transform.Find("MainMenu").GetComponent<CanvasGroup>().alpha = 0;
+                //canvas.transform.Find("MainMenu").GetComponent<CanvasGroup>().alpha = 0;
+                SceneManager.LoadScene("SampleScene");
                 break;
             case "Settings":
                 break;

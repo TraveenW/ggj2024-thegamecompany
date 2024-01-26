@@ -5,33 +5,20 @@ using UnityEngine.Events;
 
 public class MoneyTrigger : Trigger
 {
-    /*public UnityEvent myEvent;
-    public Canvas canvas;
-
-    void Start()
-    {
-        if(myEvent == null)
-            myEvent = new UnityEvent();
-
-        myEvent.AddListener(ClickMoney);
-    }
-
-    void Update()
-    {
-        if(myEvent != null && Input.GetMouseButtonDown(0))
-        {
-            myEvent.Invoke();
-        }
-    }*/
+    public float maxDistance;
 
     public override void MyEvent()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, maxDistance, 1000))
         {
-            if (hit.transform.name == "Cube")
-                canvas.transform.Find("DuringGame").GetComponent<CanvasGroup>().alpha = 1;
+            Debug.Log("Did Hit");
+            canvas.transform.Find("DuringGame").GetComponent<CanvasGroup>().alpha = 1;
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.yellow);
+            Debug.Log("Did not Hit");
         }
     }
 }
