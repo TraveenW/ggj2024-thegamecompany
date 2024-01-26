@@ -7,6 +7,7 @@ public class CanvasController : MonoBehaviour
 {
     Button[] Buttons;
     public Canvas canvas;
+    public GameObject gameObject;
 
     void Awake()
     {
@@ -15,6 +16,8 @@ public class CanvasController : MonoBehaviour
         canvas.transform.Find("MainMenu").GetComponent<CanvasGroup>().alpha = 1;
         canvas.transform.Find("GameOver").GetComponent<CanvasGroup>().alpha = 0;
         canvas.transform.Find("DuringGame").GetComponent<CanvasGroup>().alpha = 0;
+
+        Time.timeScale = 0;
     }
 
     void FixedUpdate()

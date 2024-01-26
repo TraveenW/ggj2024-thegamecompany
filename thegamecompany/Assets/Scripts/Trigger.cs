@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class MainMenu : MonoBehaviour
+public class Trigger : MonoBehaviour
 {
     public UnityEvent myEvent;
     public Canvas canvas;
@@ -13,25 +13,19 @@ public class MainMenu : MonoBehaviour
         if(myEvent == null)
             myEvent = new UnityEvent();
 
-        myEvent.AddListener(ClickMoney);
+        myEvent.AddListener(MyEvent);
     }
 
     void Update()
     {
-        if(myEvent != null && Input.GetMouseButtonDown(0))
+        if (myEvent != null && Input.GetMouseButtonDown(0))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if(Physics.Raycast(ray, out hit))
-            {
-                if(hit.transform.name == "Cube")
-                    myEvent.Invoke();
-            }
+            myEvent.Invoke();
         }
     }
 
-    void ClickMoney()
+    public virtual void MyEvent()
     {
-        canvas.transform.Find("DuringGame").GetComponent<CanvasGroup>().alpha = 1;
+
     }
 }
