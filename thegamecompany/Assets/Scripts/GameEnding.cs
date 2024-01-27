@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameEnding : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class GameEnding : MonoBehaviour
     public float targetTime = 2f;
     float timer;
     bool isCounting;
+    bool isLoading = false;
 
     bool cameraMoveEnable = false;
     Transform targetTransform;
@@ -31,7 +33,12 @@ public class GameEnding : MonoBehaviour
             {
                 timer += Time.deltaTime;
                 canvas.transform.Find("GameOver").GetComponent<CanvasGroup>().alpha = timer / targetTime;
-                Debug.Log(canvas.transform.Find("GameOver").GetComponent<CanvasGroup>().alpha);
+                
+                if (canvas.transform.Find("GameOver").GetComponent<CanvasGroup>().alpha >= 1 && isLoading == false)
+                {
+                    SceneManager.LoadScene("MainMenu");
+                    isLoading = true;
+                }
             }
         }
     }
