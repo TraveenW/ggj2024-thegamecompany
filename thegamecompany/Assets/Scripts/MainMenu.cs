@@ -12,6 +12,9 @@ public class CanvasController : MonoBehaviour
     GameObject settings;
     GameObject creditPage;
 
+    Slider musicSlider;
+    Slider sfxSlider;
+
     void Start()
     {
         canvas.gameObject.SetActive(true);
@@ -19,6 +22,9 @@ public class CanvasController : MonoBehaviour
         mainMenu = canvas.transform.Find("MainMenu").gameObject;
         settings = canvas.transform.Find("Settings").gameObject;
         creditPage = canvas.transform.Find("CreditPage").gameObject;
+
+        musicSlider = settings.transform.Find("Content").Find("MusicSlider").GetComponent<Slider>();
+        sfxSlider = settings.transform.Find("Content").Find("SFXSlider").GetComponent<Slider>();
 
         mainMenu.SetActive(true);
         settings.SetActive(false);
@@ -46,10 +52,23 @@ public class CanvasController : MonoBehaviour
     {
         mainMenu.SetActive(false);
         settings.SetActive(true);
+
+        musicSlider.value = AudioManager.Instance.musicVolume;
+        sfxSlider.value = AudioManager.Instance.sfxVolume;
+
     }
 
     public void ExitClick()
     {
+        mainMenu.SetActive(true);
+        settings.SetActive(false);
+    }
+
+    public void ConfirmClick()
+    {
+        AudioManager.Instance.musicVolume = musicSlider.value;
+        AudioManager.Instance.sfxVolume = sfxSlider.value;
+
         mainMenu.SetActive(true);
         settings.SetActive(false);
     }
