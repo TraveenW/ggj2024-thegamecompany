@@ -33,7 +33,7 @@ public class CanvasController : MonoBehaviour
 
     public void PlayClick()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("FullGameLevel");
     }
 
     public void CreditsCLick()
