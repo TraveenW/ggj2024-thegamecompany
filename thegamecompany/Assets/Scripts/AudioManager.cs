@@ -5,8 +5,8 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [Header("Volumes")]
-    [SerializeField] float musicVolume = 1;
-    [SerializeField] float sfxVolume = 1;
+    public float musicVolume = 1;
+    public float sfxVolume = 1;
 
     [Header("Music")]
     public AudioSource backgroundMusic;
@@ -60,7 +60,7 @@ public class AudioManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (backgroundMusic.isPlaying)
+        if (isMusicPlaying)
         {
             backgroundMusic.volume = musicVolume;
         }
@@ -138,6 +138,9 @@ public class AudioManager : MonoBehaviour
             backgroundMusic.volume -= fadeAmount;
             yield return new WaitForSeconds(Time.deltaTime);
         }
+
+        isMusicPlaying = false;
+        yield return null;
     }
 
 
