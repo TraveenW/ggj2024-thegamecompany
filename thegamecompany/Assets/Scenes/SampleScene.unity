@@ -1112,6 +1112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1093735822}
   - component: {fileID: 1093735824}
+  - component: {fileID: 1093735825}
   m_Layer: 3
   m_Name: DoorHinge
   m_TagString: Untagged
@@ -1156,6 +1157,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1093735825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093735821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5a46002fb620384ab67ae394635d7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canUse: 1
 --- !u!1 &1254781255
 GameObject:
   m_ObjectHideFlags: 0
@@ -1705,7 +1719,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c37e5ff63fb08449b1308d362214bc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 1093735824}
   maxDistance: 20
   layerMask:
     serializedVersion: 2
