@@ -3,7 +3,12 @@ guid: 257b1e120b71f3740a0bcf917672a3e5
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FountainAndAlleyFence_Mat
+    second: {fileID: 2100000, guid: b4c7e5cc31fbb1549975caeb5ee56422, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
