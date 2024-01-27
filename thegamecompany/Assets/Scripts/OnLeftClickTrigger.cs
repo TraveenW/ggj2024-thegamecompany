@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Trigger : MonoBehaviour
+public class OnLeftClickTrigger : MonoBehaviour
 {
     public UnityEvent myEvent;
     public Canvas canvas;
