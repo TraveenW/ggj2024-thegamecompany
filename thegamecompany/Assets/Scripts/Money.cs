@@ -18,7 +18,6 @@ public class Money : MonoBehaviour
         if (isCounting)
         {
             timer -= Time.deltaTime;
-            Debug.Log(targetTime);
 
             if (timer <= 0.0f)
             {
@@ -36,9 +35,11 @@ public class Money : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistance, layerMask))
         {
-            Debug.Log("Did Hit");
-            canvas.transform.Find("DuringGame").GetComponent<CanvasGroup>().alpha = 1;
-            isCounting = true;
+            if(hit.collider.gameObject.name == "Money")
+            {
+                canvas.transform.Find("DuringGame").GetComponent<CanvasGroup>().alpha = 1;
+                isCounting = true;
+            }
         }
         else
         {

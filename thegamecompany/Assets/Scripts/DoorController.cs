@@ -13,8 +13,9 @@ public class DoorController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistance, layerMask))
         {
-            Debug.Log("DoorOpen");
-            door.Play("DoorOpen", 0, 0.0f);
+            if(hit.collider.gameObject.name == "Door")
+                Debug.Log("DoorOpen");
+                door.Play("DoorOpen", 0, 0.0f);
         }
     }
 }
