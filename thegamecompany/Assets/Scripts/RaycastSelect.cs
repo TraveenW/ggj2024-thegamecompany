@@ -25,11 +25,11 @@ public class RaycastSelect : MonoBehaviour
                 currentTarget = hit.transform.gameObject;
             }
 
-            OnRaycast(hit.transform.gameObject);
+            OnRaycast();
         }
     }
 
-    protected virtual void OnRaycast(GameObject target)
+    protected virtual void OnRaycast()
     {
 
     }
