@@ -21,6 +21,7 @@ public class Money : MonoBehaviour
     [SerializeField] int maxCounter = 5;
     private int counter = 0;
     private bool isCounting = false;
+    private bool isFinished = false;
 
     void FixedUpdate()
     {
@@ -53,9 +54,10 @@ public class Money : MonoBehaviour
             }
         }
 
-        if (counter > maxCounter - 1)
+        if (counter > maxCounter - 1 && isFinished == false)
         {
             player.transform.position = targetTransform.position;
+            isFinished = true;
         }
     }
 }

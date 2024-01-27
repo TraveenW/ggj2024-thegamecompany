@@ -22,7 +22,8 @@ public class GameEnding : MonoBehaviour
     {
         if(cameraMoveEnable)
         {
-            this.transform.position = Vector3.Lerp(transform.position, targetTransform.position, speed * Time.deltaTime);
+            // this.transform.position = Vector3.Lerp(transform.position, targetTransform.position, speed * Time.deltaTime);
+            this.transform.position = Vector3.MoveTowards(transform.position, targetTransform.position, speed * Time.deltaTime);
             this.transform.rotation = Quaternion.Lerp(transform.rotation, targetTransform.rotation, speed * Time.deltaTime);
 
             if(Vector3.Distance(this.transform.position, targetTransform.position) < 0.01f
@@ -30,6 +31,7 @@ public class GameEnding : MonoBehaviour
             {
                 timer += Time.deltaTime;
                 canvas.transform.Find("GameOver").GetComponent<CanvasGroup>().alpha = timer / targetTime;
+                Debug.Log(canvas.transform.Find("GameOver").GetComponent<CanvasGroup>().alpha);
             }
         }
     }
