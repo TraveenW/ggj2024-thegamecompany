@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class PlayerCam : MonoBehaviour
 {
-    public float sensX;
-    public float sensY;
+    [SerializeField] float sensX;
+    [SerializeField] float sensY;
 
-    public Transform orientation;
+    [SerializeField] Transform orientation;
+    [SerializeField] Transform moneySpawnPoint;
 
     float xRotation;
     float yRotation;
@@ -32,5 +33,6 @@ public class PlayerCam : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+        moneySpawnPoint.rotation = orientation.rotation;
     }
 }

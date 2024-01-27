@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class Money : MonoBehaviour
 {
-    public float maxDistance;
-    public LayerMask layerMask;
+    [SerializeField] GameObject moneySpawnPoint;
+    [SerializeField] GameObject money;
+    [SerializeField] GameObject player;
 
-    public Canvas canvas;
+    [SerializeField] float maxDistance;
 
-    public float targetTime = 3.0f;
+    [SerializeField] LayerMask layerMask;
+
+    [SerializeField] Transform targetTransform;
+
+    [SerializeField] Canvas canvas;
+
+    [SerializeField] float targetTime = 3.0f;
     private float timer;
+    [SerializeField] int maxCounter = 5;
+    private int counter = 0;
     private bool isCounting = false;
 
     void FixedUpdate()
@@ -22,7 +31,6 @@ public class Money : MonoBehaviour
             if (timer <= 0.0f)
             {
                 isCounting = false;
-                Debug.Log("Hide");
                 canvas.transform.Find("DuringGame").GetComponent<CanvasGroup>().alpha = 0;
             }
         }
@@ -35,16 +43,19 @@ public class Money : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistance, layerMask))
         {
-            if(hit.collider.gameObject.name == "Money")
+            if(hit.collider.gameObject.name == "Fountain")
             {
                 canvas.transform.Find("DuringGame").GetComponent<CanvasGroup>().alpha = 1;
                 isCounting = true;
+
+                Instantiate(money, moneySpawnPoint.transform.position, moneySpawnPoint.transform.rotation);
+                counter += 1;
             }
         }
-        else
+
+        if (counter > maxCounter - 1)
         {
-            Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.yellow);
-            Debug.Log("Did not Hit");
+            player.transform.position = targetTransform.position;
         }
     }
 }

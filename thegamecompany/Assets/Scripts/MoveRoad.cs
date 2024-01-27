@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MoveRoad : MonoBehaviour
 {
-    public GameObject road;
-    public Transform targetTransform;
-    public float speed;
+    [SerializeField] GameObject road;
+    [SerializeField] Transform targetTransform;
+    [SerializeField] float speed;
     bool isMoving = false;
 
     void Update()

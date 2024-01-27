@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class CanvasController : MonoBehaviour
 {
     Button[] Buttons;
-    public Canvas canvas;
+    [SerializeField] Canvas canvas;
     GameObject mainMenu;
 
     void Start()

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed;
+    [SerializeField] float moveSpeed;
 
-    public Transform orientation;
+    [SerializeField] Transform orientation;
 
     float horizontalInput;
     float verticalInput;

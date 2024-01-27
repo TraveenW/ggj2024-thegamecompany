@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class RaycastSelect : MonoBehaviour
 {
-    public float selectionDistance = 1f;
-    public LayerMask layerMask;
+    [SerializeField] float selectionDistance = 1f;
+    [SerializeField] LayerMask layerMask;
 
     private GameObject currentTarget;
 
