@@ -31,7 +31,6 @@ public class AudioManager : MonoBehaviour
 
     [Header("Misc")]
     public AudioSource fountainStream;
-    private bool isfountainPlaying = false;
     public AudioSource woodHit;
 
     // Create audio manager as a singleton that lasts between scenes
@@ -39,6 +38,8 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance { get; private set; }
     private void Awake()
     {
+        DontDestroyOnLoad(this);
+
         // If another manager is present, delete that manager
 
         if (Instance != null && Instance != this)
@@ -57,12 +58,19 @@ public class AudioManager : MonoBehaviour
 
     }
 
+    private void FixedUpdate()
+    {
+        if (backgroundMusic.isPlaying)
+        {
+            backgroundMusic.volume = musicVolume;
+        }
+    }
+
     // Start background music if it isn't playing already
     public void PlayMusic()
     {
         if (backgroundMusic.isPlaying!)
         {
-            backgroundMusic.volume = musicVolume;
             backgroundMusic.Play();
             isMusicPlaying = true;
         }
