@@ -6,14 +6,11 @@ using UnityEngine.Events;
 public class OnLeftClickTrigger : MonoBehaviour
 {
     public UnityEvent myEvent;
-    public Canvas canvas;
 
     void Start()
     {
         if(myEvent == null)
             myEvent = new UnityEvent();
-
-        myEvent.AddListener(MyEvent);
     }
 
     void Update()
@@ -22,10 +19,5 @@ public class OnLeftClickTrigger : MonoBehaviour
         {
             myEvent.Invoke();
         }
-    }
-
-    public virtual void MyEvent()
-    {
-
     }
 }

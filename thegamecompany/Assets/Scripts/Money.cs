@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class Money : OnLeftClickTrigger
+public class Money : MonoBehaviour
 {
     public float maxDistance;
     public LayerMask layerMask;
+
+    public Canvas canvas;
 
     public float targetTime = 3.0f;
     private float timer;
@@ -28,7 +29,7 @@ public class Money : OnLeftClickTrigger
         }
     }
 
-    public override void MyEvent()
+    public void LoseMoney()
     {
         timer = targetTime;
 
