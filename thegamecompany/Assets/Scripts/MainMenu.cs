@@ -9,15 +9,20 @@ public class CanvasController : MonoBehaviour
     Button[] Buttons;
     [SerializeField] Canvas canvas;
     GameObject mainMenu;
+    GameObject settings;
+    GameObject creditPage;
 
     void Start()
     {
         canvas.gameObject.SetActive(true);
 
-        canvas.transform.Find("MainMenu").GetComponent<CanvasGroup>().alpha = 1;
-        canvas.transform.Find("CreditPage").GetComponent<CanvasGroup>().alpha = 0;
-
         mainMenu = canvas.transform.Find("MainMenu").gameObject;
+        settings = canvas.transform.Find("Settings").gameObject;
+        creditPage = canvas.transform.Find("CreditPage").gameObject;
+
+        mainMenu.SetActive(true);
+        settings.SetActive(false);
+        creditPage.SetActive(false);
     }
 
     public void PlayClick()
@@ -28,17 +33,30 @@ public class CanvasController : MonoBehaviour
     public void CreditsCLick()
     {
         mainMenu.SetActive(false);
-        canvas.transform.Find("CreditPage").GetComponent<CanvasGroup>().alpha = 1;
+        creditPage.SetActive(true);
     }
 
     public void BackClick()
     {
         mainMenu.SetActive(true);
-        canvas.transform.Find("CreditPage").GetComponent<CanvasGroup>().alpha = 0;
+        creditPage.SetActive(false);
+    }
+
+    public void SettingClick()
+    {
+        mainMenu.SetActive(false);
+        settings.SetActive(true);
+    }
+
+    public void ExitClick()
+    {
+        mainMenu.SetActive(true);
+        settings.SetActive(false);
     }
 
     public void QuitClick()
     {
+        Application.Quit();
         UnityEditor.EditorApplication.isPlaying = false;
     }
 }
