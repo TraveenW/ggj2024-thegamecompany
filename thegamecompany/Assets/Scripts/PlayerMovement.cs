@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed;
-    public float dragAmount;
+    [SerializeField] float moveSpeed;
 
-    public Transform orientation;
+    [SerializeField] Transform orientation;
 
     float horizontalInput;
     float verticalInput;
@@ -21,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
-        rb.drag = dragAmount;
     }
 
     // Update is called once per frame

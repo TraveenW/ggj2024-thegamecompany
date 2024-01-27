@@ -5,17 +5,20 @@ using UnityEngine;
 public class DoorController : MonoBehaviour
 {
     [SerializeField] private Animator door = null;
-    public float maxDistance;
-    public LayerMask layerMask;
+    [SerializeField] float maxDistance;
+    [SerializeField] LayerMask layerMask;
+    bool canOpen = true;
 
     public void OpenDoor()
     {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistance, layerMask))
         {
-            if(hit.collider.gameObject.name == "Door")
-                Debug.Log("DoorOpen");
+            if(hit.collider.gameObject.name == "Door" && canOpen)
+            {
                 door.Play("DoorOpen", 0, 0.0f);
+                canOpen = false;
+            }
         }
     }
 }
