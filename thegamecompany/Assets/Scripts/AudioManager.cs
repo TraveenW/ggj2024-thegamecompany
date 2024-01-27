@@ -32,6 +32,7 @@ public class AudioManager : MonoBehaviour
     [Header("Misc")]
     public AudioSource fountainStream;
     public AudioSource woodHit;
+    public AudioSource doorCreak;
 
     // Create audio manager as a singleton that lasts between scenes
     // Access audiomanager functions in other scripts using: AudioManager.Instance.[public function/variable]

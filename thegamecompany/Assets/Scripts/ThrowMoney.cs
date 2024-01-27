@@ -11,7 +11,7 @@ public class ThrowMoney : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
+        
         rb.AddForce(transform.forward * force, ForceMode.Impulse);
     }
 }
