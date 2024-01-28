@@ -9,8 +9,13 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] Transform orientation;
 
+    [SerializeField] float targetCounter;
+
     float horizontalInput;
     float verticalInput;
+
+    float counter = 0f;
+    bool isCounting = false;
 
     Vector3 moveDirection;
 
@@ -29,11 +34,31 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+
+        if (isCounting)
+            counter += Time.deltaTime;
     }
 
     void FixedUpdate()
     {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+
+        if(moveDirection.magnitude > 0)
+        {
+            if (!isCounting)
+                isCounting = true;
+
+            if(counter >= targetCounter)
+            {
+                //AudioManager.Instance.PlayFootsteps();
+                Debug.Log("PlayFootsteps");
+            }
+        }
+        else
+        {
+            isCounting = false;
+            counter = 0f;
+        }
 
         rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
     }
