@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8832777261070716413}
   - component: {fileID: 2664685156498090921}
   - component: {fileID: 5134025482257497734}
+  - component: {fileID: 8024859686876375229}
   m_Layer: 0
   m_Name: PointLight
   m_TagString: Untagged
@@ -118,6 +119,19 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!114 &8024859686876375229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520103529188196558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79ead42b6cf5a0441913d7fc468a76bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activateDistance: 20
 --- !u!1 &7763931067905382983
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,6 +143,7 @@ GameObject:
   - component: {fileID: 6773710742242735871}
   - component: {fileID: 1818864766250551836}
   - component: {fileID: 7562021513833834159}
+  - component: {fileID: 390047887765318620}
   m_Layer: 0
   m_Name: SpotLight
   m_TagString: Untagged
@@ -164,7 +179,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 2.51
-  m_Range: 10
+  m_Range: 3.83
   m_SpotAngle: 151.21628
   m_InnerSpotAngle: 68.32061
   m_CookieSize: 10
@@ -236,6 +251,19 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!114 &390047887765318620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7763931067905382983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79ead42b6cf5a0441913d7fc468a76bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activateDistance: 20
 --- !u!1001 &8153790746789844677
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -246,11 +274,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 20717c7d28364234e998a844c1449775, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -33.15677
+      value: -41.37052
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 20717c7d28364234e998a844c1449775, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4
+      value: 1.4000008
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 20717c7d28364234e998a844c1449775, type: 3}
       propertyPath: m_LocalPosition.z

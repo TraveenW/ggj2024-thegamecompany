@@ -11,7 +11,7 @@ public class LightByDistance : MonoBehaviour
     [SerializeField]
     private float activateDistance;
 
-    void OnAwake()
+    void OnEnable()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         lightPosition = this.transform.position;
