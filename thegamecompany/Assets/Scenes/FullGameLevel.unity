@@ -3722,8 +3722,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 684760855945322048, guid: bd409be3552237b43bdf81d9a379bd8b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 501189456}
   m_SourcePrefab: {fileID: 100100000, guid: bd409be3552237b43bdf81d9a379bd8b, type: 3}
+--- !u!1 &501189455 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 684760855945322048, guid: bd409be3552237b43bdf81d9a379bd8b, type: 3}
+  m_PrefabInstance: {fileID: 501189454}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &501189456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501189455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78131ced3e30f2841a469ac4700d47f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeUntilFadeOut: 5
+  fadeOutAmount: 0.06
 --- !u!1001 &508863728
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8534,6 +8556,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3022516176079182133, guid: dbc4ccf5d7c66a34a8331ff43cd71ca0, type: 3}
+      propertyPath: Priority
+      value: 63
+      objectReference: {fileID: 0}
+    - target: {fileID: 3022516176079182133, guid: dbc4ccf5d7c66a34a8331ff43cd71ca0, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 50f90a083a3e09948b16793e6cc5b6d7, type: 3}
+    - target: {fileID: 3022516176079182133, guid: dbc4ccf5d7c66a34a8331ff43cd71ca0, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 7e36e67dba24aba4b824bbd96b44aa77, type: 2}
     - target: {fileID: 4615671144580816350, guid: dbc4ccf5d7c66a34a8331ff43cd71ca0, type: 3}
       propertyPath: m_Name
       value: Audio Manager
@@ -8810,13 +8844,36 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8157255021488423631, guid: 11ff698e140890041a088a0da89e819e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 690449265}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1363234793230633268, guid: 11ff698e140890041a088a0da89e819e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1173294387}
   m_SourcePrefab: {fileID: 100100000, guid: 11ff698e140890041a088a0da89e819e, type: 3}
 --- !u!4 &1173294385 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8157255021488423631, guid: 11ff698e140890041a088a0da89e819e, type: 3}
   m_PrefabInstance: {fileID: 1173294384}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1173294386 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1363234793230633268, guid: 11ff698e140890041a088a0da89e819e, type: 3}
+  m_PrefabInstance: {fileID: 1173294384}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1173294387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173294386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5197e57b420b2084c91ef549b2a54a3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSourceName: Crowd Cheer
+  timeUntilFadeOut: 5
+  fadeOutAmount: 0.06
 --- !u!1001 &1185328526
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14319,7 +14376,7 @@ Transform:
   m_GameObject: {fileID: 1726439383}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.0000029504295}
-  m_LocalPosition: {x: -2.8600001, y: 0.51, z: 12.150001}
+  m_LocalPosition: {x: -2.8600001, y: 0.51, z: 11.34}
   m_LocalScale: {x: 10.025551, y: 1, z: 3.8942964}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17506,7 +17563,7 @@ Transform:
   m_GameObject: {fileID: 2120176713}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: 0.563}
   m_LocalScale: {x: 3.3208168, y: 2.5088, z: 1.5233083}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17553,7 +17610,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 74c375f022d2a7a48bbc3e22eb6b2bd8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
