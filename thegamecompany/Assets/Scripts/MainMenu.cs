@@ -29,6 +29,8 @@ public class CanvasController : MonoBehaviour
         mainMenu.SetActive(true);
         settings.SetActive(false);
         creditPage.SetActive(false);
+
+        AudioManager.Instance.PlayMusic();
     }
 
     public void PlayClick()

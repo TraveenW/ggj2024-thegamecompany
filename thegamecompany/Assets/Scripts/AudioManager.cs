@@ -72,6 +72,7 @@ public class AudioManager : MonoBehaviour
     {
         if (backgroundMusic.isPlaying!)
         {
+            Debug.Log("Now Playing");
             backgroundMusic.Play();
             isMusicPlaying = true;
         }
@@ -125,7 +126,7 @@ public class AudioManager : MonoBehaviour
     }
 
     // Fade out music over time
-    public void StartFadeOutMusic()
+    public void StopMusic()
     {
         StartCoroutine(FadeOutMusic());
     }

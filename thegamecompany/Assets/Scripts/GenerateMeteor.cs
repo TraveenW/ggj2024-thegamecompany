@@ -26,6 +26,7 @@ public class GenerateMeteor : RaycastSelect
             newMeteor.transform.position = generateTransform.position;
             newMeteor.GetComponent<Meteor>().target = rock.position;
             meteorSound.Play();
+            meteorSound.volume = AudioManager.Instance.sfxVolume * 0.75f;
             canGenerate = false;
         }
     }
