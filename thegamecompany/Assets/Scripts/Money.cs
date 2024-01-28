@@ -21,7 +21,7 @@ public class Money : MonoBehaviour
     [SerializeField] int maxCounter = 5;
     private int counter = 0;
     private bool isCounting = false;
-    private bool isFinished = false;
+    [HideInInspector] public bool isFinished = false;
 
     void FixedUpdate()
     {

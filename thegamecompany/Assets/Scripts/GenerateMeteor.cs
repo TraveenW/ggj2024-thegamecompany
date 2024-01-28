@@ -11,6 +11,13 @@ public class GenerateMeteor : RaycastSelect
 
     private GameObject newMeteor;
 
+    AudioSource meteorSound;
+
+    private void Start()
+    {
+        meteorSound = GameObject.Find("Meteor Falling").GetComponent<AudioSource>();
+    }
+
     protected override void OnRaycast()
     {
         if (canGenerate)
@@ -18,6 +25,8 @@ public class GenerateMeteor : RaycastSelect
             newMeteor = Instantiate(meteor, generateTransform.position, generateTransform.rotation) as GameObject;
             newMeteor.transform.position = generateTransform.position;
             newMeteor.GetComponent<Meteor>().target = rock.position;
+            meteorSound.Play();
+            meteorSound.volume = AudioManager.Instance.sfxVolume * 0.75f;
             canGenerate = false;
         }
     }
