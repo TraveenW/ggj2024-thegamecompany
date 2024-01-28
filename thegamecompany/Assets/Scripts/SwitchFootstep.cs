@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class SwitchFootstep : MonoBehaviour
 {
+
+    private void Start()
+    {
+        AudioManager.Instance.SwitchFootstepsStreet();
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            Debug.Log("SwitchFootstepsMetal");
-            //AudioManager.Instance.SwitchFootstepsMetal();
+            AudioManager.Instance.StopMusic();
+            AudioManager.Instance.SwitchFootstepsMetal();
         }
     }
 
@@ -17,8 +23,7 @@ public class SwitchFootstep : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            Debug.Log("SwitchFootstepsStreet");
-            // AudioManager.Instance.SwitchFootstepsStreet();
+            AudioManager.Instance.SwitchFootstepsStreet();
         }
     }
 }

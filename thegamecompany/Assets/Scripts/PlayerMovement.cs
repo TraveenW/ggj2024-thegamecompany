@@ -50,8 +50,8 @@ public class PlayerMovement : MonoBehaviour
 
             if(counter >= targetCounter)
             {
-                //AudioManager.Instance.PlayFootsteps();
-                Debug.Log("PlayFootsteps");
+                AudioManager.Instance.PlayFootsteps();
+                counter = 0f;
             }
         }
         else

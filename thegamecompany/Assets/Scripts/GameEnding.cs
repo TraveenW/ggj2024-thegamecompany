@@ -36,6 +36,8 @@ public class GameEnding : MonoBehaviour
                 
                 if (canvas.transform.Find("GameOver").GetComponent<CanvasGroup>().alpha >= 1 && isLoading == false)
                 {
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
                     SceneManager.LoadScene("MainMenu");
                     isLoading = true;
                 }

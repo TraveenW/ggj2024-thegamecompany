@@ -78,6 +78,5 @@ public class CanvasController : MonoBehaviour
     public void QuitClick()
     {
         Application.Quit();
-        UnityEditor.EditorApplication.isPlaying = false;
     }
 }
