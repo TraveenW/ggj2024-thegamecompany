@@ -333,6 +333,7 @@ MonoBehaviour:
     m_Bits: 64
   generateTransform: {fileID: 0}
   meteor: {fileID: 4954617865653859656, guid: 852c02e7b94abc24c93e83b37c37a86e, type: 3}
+  rock: {fileID: 0}
 --- !u!1 &3656498566610788376
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,7 +462,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4793349571631015874}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
