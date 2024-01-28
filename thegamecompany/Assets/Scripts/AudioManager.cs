@@ -72,7 +72,6 @@ public class AudioManager : MonoBehaviour
     {
         if (backgroundMusic.isPlaying!)
         {
-            Debug.Log("Now Playing");
             backgroundMusic.Play();
             isMusicPlaying = true;
         }
